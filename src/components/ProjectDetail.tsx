@@ -20,9 +20,15 @@ export default function ProjectDetail({ projectId, onClose }: ProjectDetailProps
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-sm">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-sm"
+      onClick={onClose}
+    >
       <div className="min-h-screen px-6 py-12 flex items-start justify-center">
-        <div className="bg-white rounded-xl max-w-4xl w-full shadow-2xl relative animate-fadeIn">
+        <div 
+          className="bg-white rounded-xl max-w-4xl w-full shadow-2xl relative animate-fadeIn"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button
             onClick={onClose}
             className="absolute top-6 right-6 p-2 hover:bg-gray-100 rounded-lg transition-colors z-10"
@@ -61,7 +67,15 @@ export default function ProjectDetail({ projectId, onClose }: ProjectDetailProps
 
             <div className="prose prose-lg max-w-none">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Overview</h3>
-              <p className="text-gray-700 leading-relaxed">{project.fullDescription}</p>
+              <div 
+                className="text-gray-700 leading-relaxed"
+                dangerouslySetInnerHTML={{ 
+                  __html: project.fullDescription
+                    .replace(/\*\*\[(.*?)\]\((.*?)\)\*\*/g, '<strong><a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">$1</a></strong>')
+                    .replace(/\n\n/g, '<br/>')
+                    .replace(/• /g, '<br/>• ')
+                }}
+              />
             </div>
 
             <div className="prose prose-lg max-w-none">

@@ -97,7 +97,8 @@ export default function Projects({ onProjectClick, onViewMore }: ProjectsProps) 
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-200 dark:border-gray-600"
+              onClick={() => onProjectClick(project.id)}
+              className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-200 dark:border-gray-600 cursor-pointer"
             >
               <div className="h-32 md:h-48 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-600 dark:to-gray-700 relative overflow-hidden">
                 {project.image ? (
@@ -138,7 +139,10 @@ export default function Projects({ onProjectClick, onViewMore }: ProjectsProps) 
 
                 <div className="flex gap-2 md:gap-3 pt-2 md:pt-4">
                   <button
-                    onClick={() => onProjectClick(project.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onProjectClick(project.id);
+                    }}
                     className="flex-1 px-2 md:px-4 py-1.5 md:py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-1 md:gap-2 text-xs md:text-sm font-medium"
                   >
                     <span className="hidden md:inline">View Details</span>
@@ -150,6 +154,7 @@ export default function Projects({ onProjectClick, onViewMore }: ProjectsProps) 
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="p-1.5 md:p-2 border border-gray-300 dark:border-gray-500 rounded-lg hover:border-gray-900 dark:hover:border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all duration-300"
                     >
                       <Github size={16} className="md:w-5 md:h-5 text-gray-700 dark:text-gray-300" />
