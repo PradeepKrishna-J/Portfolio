@@ -59,6 +59,15 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com',
   },
   {
+    id: 'clickable',
+    title: 'Clickable',
+    category: 'web-dev',
+    description: 'No-code tool for marketers to create professional blog CTAs with customizable widgets and real-time preview.',
+    fullDescription: 'Clickable is a no-code tool internally built during an internship, designed specifically for marketers to create engaging blog content using customizable CTA widgets. The platform streamlines the process of creating professional call-to-action elements without requiring any coding knowledge.\n\nKey features include:\n\n• **13 Professional Templates** - Carefully crafted CTA widgets for every use case. From newsletter signups to product promotions. Covers all common marketing scenarios.\n\n• **Live Preview** - See your changes instantly with real-time preview. Interactive editing experience with immediate visual feedback. No need to refresh or rebuild.\n\n• **One-Click Export** - Copy the generated HTML/CSS code with a single click. Ready-to-use code snippets for immediate integration. Seamless workflow for content creators.\n\n• **Fully Responsive** - All templates are mobile-optimized and look perfect on any device. Automatic scaling and layout adjustments. Ensures consistent user experience across platforms.\n\n• **Easy Customization** - Intuitive form controls for all template properties. Colors, fonts, spacing, and content all adjustable. No technical knowledge required for professional results.',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'HTML/CSS'],
+    githubUrl: 'https://github.com/PradeepKrishna-J/Clickeble',
+  },
+  {
     id: 'schoolscape',
     title: 'Schoolscape',
     category: 'web-dev',

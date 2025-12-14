@@ -72,6 +72,7 @@ export default function ProjectDetail({ projectId, onClose }: ProjectDetailProps
                 dangerouslySetInnerHTML={{ 
                   __html: project.fullDescription
                     .replace(/\*\*\[(.*?)\]\((.*?)\)\*\*/g, '<strong><a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">$1</a></strong>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                     .replace(/\n\n/g, '<br/>')
                     .replace(/• /g, '<br/>• ')
                 }}
