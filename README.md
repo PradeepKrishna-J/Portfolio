@@ -129,7 +129,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Pradeep Krishna J**
 
 - GitHub: [@PradeepKrishna-J](https://github.com/PradeepKrishna-J)
-- LinkedIn: [jpradeepkrishna](https://linkedin.com/in/jpradeepkrishna)
+- LinkedIn: [jpradeepkrishna](https://www.linkedin.com/in/pradeepkrishna-j/)
 
 ## 🙏 Acknowledgments
 
